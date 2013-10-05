@@ -19,43 +19,45 @@ class Array
 
   # Returns the prime numbers in this array
   def primes
-    #puts self.join(",")
+    # puts self.join(",")
+
+
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] #testing
+    array2 = []
+    c = array.length+1 #last instead?
+    p = array.length
+    is_prime = true
+
+  while c >= 2
+    while p >= 2
+      if c % p == 0
+        puts "#{c} can be divided exactly into #{p}"
+        is_prime = false
+        p = p-1
+      else
+        p = p-1
+      end
+      #binding.pry
+
+    end
+    if is_prime == true
+      array2 << c
+      is_prime = false
+      c = c-1
+    else
+      c = c-1
+    end
+    #binding.pry
+    end
+    array2
   end
 
-  # def is_prime
-  #   n = self
-  #   i = n-1
-  #   while i > 2
-  #     if i % n == 0
-  #       true
-  #       break
-  #     else
-  #       false
-  #     end
-  #     i += -1
-  #   end
-  #end
 
-  # Examine each pair in myself and swap them until all my
-  # elements are in order
-  #
-
-  #a, b = b, a
-#stack
-#temp variable
-
-#cycle counter
-
-  def bubble_sort
+  def bubble_sort 
   # 	puts self.join(",")
-    reset = 0
-    r = 0
     c = 0
 
     while c < self.length-1
-      
-
-      r += 1
 
       cycle = 0
       while cycle < self.length-1
@@ -64,8 +66,8 @@ class Array
         pos = 0
         temp_array = []
 
-        left = self[pos + cycle] 
-        right = self[pos+1 + cycle]
+        left = self[pos+cycle] 
+        right = self[pos+1+cycle]
         if left > right 
            temp_array = swap(left, right)
            self[pos+cycle] = temp_array[0]
@@ -77,15 +79,13 @@ class Array
             c += 1
             puts c
             if c >= self.length-1
-              puts "We're done."
+              #puts "We're done."
               break
             else
               cycle += 1
             end
         end
       end
-    reset += 1
-    #self
     end
     self
   end
@@ -98,19 +98,7 @@ class Array
     stack << r
     # puts "The stack contains #{stack}"
     return stack.pop, stack.pop
-  #   temp_left = l
-  #   temp_right = r
-  #   bubble_sort[pos] + cycle = r
-  #   bubble_sort([pos]+1) + cucle =l 
-  #   #stack instead?
   end
-
-  # def continue 
-  #   # puts "Carrying on..."
-  # end
-
-
-
 end
 
 
