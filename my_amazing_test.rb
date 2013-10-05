@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'pry'
-require_relative 'my_amazing_array'
+require_relative 'my_amazing_array2'
 
 class MyAmazingTest < Test::Unit::TestCase
 
