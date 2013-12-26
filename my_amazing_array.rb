@@ -5,7 +5,6 @@ class Array
   # numeric)
   #
   def sum
-    # self.join(",")
   total = 0
   i = 0
     while i <= self.length-1
@@ -16,45 +15,26 @@ class Array
   end
 
 
-
-  # Returns the prime numbers in this array
   def primes
-    # puts self.join(",")
+    not_prime = []
 
-
-    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] #testing
-    array2 = []
-    c = array.length+1 #last instead?
-    p = array.length
-    is_prime = true
-
-  while c >= 2
-    while p >= 2
-      if c % p == 0
-        puts "#{c} can be divided exactly into #{p}"
-        is_prime = false
-        p = p-1
-      else
-        p = p-1
+    self.each do |number|
+      divide_against = (2..number)
+      divide_against.each do |div_number|
+        if number % div_number == 0
+          if div_number != number 
+            not_prime << number 
+            break
+          end
+        end
       end
-      #binding.pry
-
     end
-    if is_prime == true
-      array2 << c
-      is_prime = false
-      c = c-1
-    else
-      c = c-1
-    end
-    #binding.pry
-    end
-    array2
+    self.delete(1)
+    self - not_prime
   end
 
 
   def bubble_sort 
-  # 	puts self.join(",")
     c = 0
 
     while c < self.length-1
@@ -79,7 +59,6 @@ class Array
             c += 1
             puts c
             if c >= self.length-1
-              #puts "We're done."
               break
             else
               cycle += 1
@@ -92,11 +71,9 @@ class Array
 
 
    def swap(l, r)
-    # puts "lets swap #{l} with #{r}!"
     stack = []
     stack << l
     stack << r
-    # puts "The stack contains #{stack}"
     return stack.pop, stack.pop
   end
 end
