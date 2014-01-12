@@ -1,9 +1,7 @@
 require 'pry'
 
 class Array
-  # Calculate the total sum of all the elements in this array (assuming they are
-  # numeric)
-  #
+  
   def sum
   total = 0
   i = 0
